@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: "Lexanomics Blog"
+  site-url: https://www.lexanomics.com/
+  navbar:
+    right:
+      - icon: envelope
+        href: mailto:lexanomics@gmail.com
+      - icon: whatsapp
+        href: https://tinyurl.com/lexanomics
+      - icon: linkedin
+        href: https://www.linkedin.com/company/lexanomics/
+format:
+  html:
+    theme: theme.scss
+
