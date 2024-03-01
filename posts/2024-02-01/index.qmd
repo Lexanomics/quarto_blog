@@ -5,6 +5,11 @@ date: "2024-03-01"
 categories: [dnaseq]
 ---
 
+<style>
+body {
+text-align: justify}
+</style>
+
 ![](images.jpeg)
 
 

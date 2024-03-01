@@ -1,24 +1,36 @@
 ---
-title: "Are you aware of RNA sequencing analysis?"
-author: "Diego M. Coelho"
+title: "Analysing the cell transcriptional profile at the single-cell resolution"
+author: "Iara Souza"
+bibliography: ref.bib
 date: "2024-02-29"
-categories: [rnaseq]
+categories: [scRNA-seq]
 ---
 
-![](thumb.png)
+<style>
+body {
+text-align: justify}
+</style>
 
-Sequencing technologies have revolutionized our understanding of human and other organisms’ biology. By having access to the transcriptome, one can have insights into the cellular functional alterations in different metabolic scenarios. From gene expression, one can perform many possible analyses, such as:
+Single-cell RNA-seq analysis is a powerful technique used in biology and medicine to study the gene expression of individual cells within a population. Single-cell gene expression analysis and bulk RNA-seq differ primarily in the scale and resolution of the analysis. Single-cell gene expression analysis focuses on individual cells, providing insights into cellular heterogeneity and rare cell populations. In contrast, bulk RNA-seq measures the average gene expression of a population of cells, masking cellular diversity. Single-cell analysis requires specialized methods to isolate and analyze individual cells, while bulk RNA-seq is more straightforward and commonly used for analyzing gene expression in larger cell populations.
+ 
+Besides producing beautiful visualizations [@LaManno2021], single-cell data has revolutionized the information regarding cell biology, with direct applications to the understanding of cell development and human diseases. 
 
-🧬 Differential expression analysis, to compare the expression levels of genes in case-control scenarios, making possible the identification of biomarkers and gene signatures;
+![t-SNE representation for cell types development in mouse brain. Figure from [@LaManno2021].](fig1.jpeg){width="700" height="700" fig-alt="Single-cell graph with similarities with a map"}
 
-🔍 Functional enrichment analysis and gene set enrichment analysis (GSEA), to understand the impact of transcriptional alterations in cellular pathways;
+Here’s some use cases for single-cell data:
 
-🤝 Co-expression analysis, to gather gene modules collectively expressed in a given condition;
+- **Cellular Heterogeneity** 🧬: Understand the complex biological processes such as development, disease progression, and immune responses.
 
-🔄 Protein-protein interaction networks, to understand how gene targets interact with each other in a functional and/or physical way;
+- **Developmental Biology** 🌱: Insights into the molecular mechanisms underlying cell differentiation and development.
 
-📊 Expression deconvolution, to infer cell type proportions from curated reference panels;
+- **Cancer Research** 🦠: Study tumor heterogeneity, identify rare subpopulations of cells, and track the evolution of cancer cells over time or in response to treatment.
 
-🔗 Construction of regulatory networks, to understand how regulatory elements, such as transcription factors and non-coding RNAs, impact the transcriptional profile of a given condition.
+- **Neuroscience** 🧠: Map the cellular diversity of the brain, identify different cell types, and understand how they function in both healthy and diseased states.
 
-Here in Lexanomics, we have extensive experience in preprocessing RNA-Seq data using gold-standard bioinformatics tools and protocols, which can help you increase your research's impact. Let's advance together! 🚀 #Lexanomics #RNAseq #Bioinformatics #Research
+- **Immunology** 🦠: Study immune cell diversity, activation states, and responses to stimuli.
+
+- **Stem Cell Biology** 🌱: Study the properties of stem cells, such as self-renewal and differentiation potential, and identify markers for specific cell types.
+
+- **Drug Discovery and Development** 💊: Identify new drug targets, understand drug resistance mechanisms, and optimize drug development pipelines.
+
+Single-cell opened a world to new discoveries. Do you need help with analysing single-cell data? Schedule a meeting with the Lexanomics consultants!
