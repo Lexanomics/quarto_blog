@@ -1,0 +1,24 @@
+---
+title: "Jumping genetic element getting in the way of primates tail evolution"
+author: "Iara Souza"
+date: "2024-03-03"
+bibliography: ref.bib
+categories: [awesome science]
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+It is of common knowledge that humans and monkeys share great similarities regarding their genomes. And, if most monkeys have tails, what happend to ours? This is the central question Xia and colleagues [@xia2024] try to answer. 
+
+After comparing the genomic sequences across primates, the researchers found a mobile genetic element called Alu only inserted on the gene TBXT of apes, a gene that encodes for a transcription factor associated with tail development in mammals. Alu elements have the ability of “teleporting” and fixating in other genome regions and therefore they are very important to diversify genome sequences. The Alu element insertion found in apes leads to an alternative splicing event, resulting in the production of a shortened form of the TBXT gene. Humans express both the full-length and the shortened versions of TBXT gene. 
+
+![Evolution of tails in primates. Figure from Xia et al, 2024.](fig1.jpeg){width="800" height="800" fig-alt="Three graphs showing evolutionary relationships of primates regarding the tail gene."}
+
+To test their hypothesis, researchers engineered mice to express these two gene versions and they observed that, in this scenario, mice exhibit a lack of a tail or a shortened tail, similar to the tail-loss phenotype in hominoids. However, for mice engineered to have only the shortened version of TBXT gene died during the embryonic development. This suggests that the evolution of tail loss in hominoids may have been associated with an adaptive trade-off, where the loss of the tail conferred evolutionary advantages but also increased the risk of neural tube defects.
+
+![From SMBC comics (<https://www.smbc-comics.com/>).](fig2.jpg){width="500" height="300"}
+
+This research is a great example of comparative genome analysis, common in the Bioinformatics area. Do you need help in comparing genomes? Talk to the Lexanomics team!
