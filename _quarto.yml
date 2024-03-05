@@ -4,6 +4,8 @@ project:
 website:
   title: "Lexanomics Blog"
   site-url: https://www.lexanomics.com/
+  description: "Lexanomics Blog"
+  margin-header: subscribe.html
   navbar:
     right:
       - icon: envelope
