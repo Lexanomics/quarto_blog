@@ -1,0 +1,36 @@
+---
+title: "Analysing the cell transcriptional profile at the single-cell resolution"
+author: "Iara Souza"
+bibliography: ref.bib
+date: "2024-03-05"
+categories: [LALALAA-seq]
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+Single-cell RNA-seq analysis is a powerful technique used in biology and medicine to study the gene expression of individual cells within a population. Single-cell gene expression analysis and bulk RNA-seq differ primarily in the scale and resolution of the analysis. Single-cell gene expression analysis focuses on individual cells, providing insights into cellular heterogeneity and rare cell populations. In contrast, bulk RNA-seq measures the average gene expression of a population of cells, masking cellular diversity. Single-cell analysis requires specialized methods to isolate and analyze individual cells, while bulk RNA-seq is more straightforward and commonly used for analyzing gene expression in larger cell populations.
+ 
+Besides producing beautiful visualizations [@LaManno2021], single-cell data has revolutionized the information regarding cell biology, with direct applications to the understanding of cell development and human diseases. 
+
+![t-SNE representation for cell types development in mouse brain. Figure from [@LaManno2021].](fig1.jpeg){width="700" height="700" fig-alt="Single-cell graph with similarities with a map"}
+
+Here’s some use cases for single-cell data:
+
+- **Cellular Heterogeneity** 🧬: Understand the complex biological processes such as development, disease progression, and immune responses.
+
+- **Developmental Biology** 🌱: Insights into the molecular mechanisms underlying cell differentiation and development.
+
+- **Cancer Research** 🦠: Study tumor heterogeneity, identify rare subpopulations of cells, and track the evolution of cancer cells over time or in response to treatment.
+
+- **Neuroscience** 🧠: Map the cellular diversity of the brain, identify different cell types, and understand how they function in both healthy and diseased states.
+
+- **Immunology** 🦠: Study immune cell diversity, activation states, and responses to stimuli.
+
+- **Stem Cell Biology** 🌱: Study the properties of stem cells, such as self-renewal and differentiation potential, and identify markers for specific cell types.
+
+- **Drug Discovery and Development** 💊: Identify new drug targets, understand drug resistance mechanisms, and optimize drug development pipelines.
+
+Single-cell opened a world to new discoveries. Do you need help with analysing single-cell data? Schedule a meeting with the Lexanomics consultants!
