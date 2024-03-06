@@ -3,22 +3,7 @@ name: Test and Deploy
 on:
   pull request:
     branches:
-      - main  # Adjust this to your main branch name
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Test with Quarto
-        run: |
-          docker run -v ${{ github.workspace }}:/workspace ghcr.io/quarto-dev/quarto:1.4.550 quarto render /workspace
-
-
-on:
+      - main
   push:
     branches:
       - main  # Adjust this to your main branch name
