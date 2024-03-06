@@ -25,9 +25,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          ref: 'your-deploy-branch'  # Change this to your deployment branch name
 
       - name: Deploy with Quarto
         run: |
           docker run -v ${{ github.workspace }}:/workspace ghcr.io/quarto-dev/quarto:1.4.550 quarto render /workspace
+
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: lexanomics.github.io
+          BRANCH: dev # The branch name where you want to push the assets
+          FOLDER: _site # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Build: ({sha}) {msg}" # The commit message
