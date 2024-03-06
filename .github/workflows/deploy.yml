@@ -15,7 +15,7 @@ jobs:
 
       - name: Test with Quarto
         run: |
-          docker run -v ${{ github.workspace }}:/workspace ghcr.io/quarto-dev/quarto:1.4.550 quarto render
+          docker run -v ${{ github.workspace }}:/workspace ghcr.io/quarto-dev/quarto:1.4.550 quarto render /workspace
 
   deploy:
     runs-on: ubuntu-latest
@@ -30,4 +30,4 @@ jobs:
 
       - name: Deploy with Quarto
         run: |
-          docker run -v ${{ github.workspace }}:/workspace ghcr.io/quarto-dev/quarto:1.4.550 quarto render
+          docker run -v ${{ github.workspace }}:/workspace ghcr.io/quarto-dev/quarto:1.4.550 quarto render /workspace
