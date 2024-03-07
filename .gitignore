@@ -1,2 +1,6 @@
 _site/
 /.quarto/
+.gitignore
+data/
+.Rproj.user
+.Rproj

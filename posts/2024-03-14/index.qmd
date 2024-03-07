@@ -1,0 +1,90 @@
+---
+title: "Data interoperability for single-cell analysis"
+author: "Lexanomics"
+date: "2024-03-14"
+execute:
+    warning: false
+    freeze: auto
+categories: [debbuging new]
+---
+
+# Interoperability on Seurat V5
+
+Seurat is undoubtedly the most used package for single-cell analysis.  However, the single-cell field has changed towards new programming languages and packages (e.g., Scanpy), which leads to an issue regarding **interoperability
+**, i.e., the ability of software to exchange and make use of information. Here, we show how to quickly convert Seurat objects from ongoing projects to AnnData (Scanpy data object).
+
+## 1. Loading requirements
+
+```{r loading}
+
+library(Seurat)
+library(dplyr)
+library(sceasy)
+
+# Setting Assay version 5
+options(Seurat.object.assay.version = "v5")
+
+# Load the PBMC dataset - available at 10x datasets website
+pbmc.data <- Read10X(
+    data.dir = "/Users/affaustino/Projects/UTILS/quarto_blog/data/filtered_gene_bc_matrices/hg19")
+
+# Initialize the Seurat object with the raw (non-normalized data).
+pbmc_seurat <- CreateSeuratObject(
+  counts = pbmc.data, project = "pbmc3k", min.cells = 3, min.features = 200)
+
+```
+
+```{r mito_percent}
+
+# The [[ operator can add columns to object metadata. This is a great place to stash QC stats
+pbmc_seurat[["percent_mt"]] <- PercentageFeatureSet(pbmc_seurat, pattern = "^MT-")
+
+```
+
+```{r normalize}
+
+pbmc_seurat <- pbmc_seurat %>%
+  NormalizeData(normalization.method = "LogNormalize", scale.factor = 10000) %>%
+  FindVariableFeatures(selection.method = "vst", nfeatures = 2000) %>%
+  ScaleData()
+
+```
+
+## 2. Inspecting object
+
+Once we have the Seurat object, we can quickly inspect its structure. Why should we do it? For education, it is nice to understand what slots will be kept over the conversion process.
+
+```{r inspecting-1}
+
+pbmc_seurat
+
+```
+
+```{r inspecting-2}
+
+pbmc_seurat@assays
+
+```
+
+## 3. Converting to SingleCellExperiment
+
+In our experience, the `SingleCellExperiment` object works as an intermediate layer between Seurat and AnnData. In short, it will ensure that most of the data is maintained among formats.
+
+```{r experiment}
+
+pbmc_sce <- as.SingleCellExperiment(
+    pbmc_seurat)
+
+```
+
+## 4. Saving as AnnData
+
+Finally, we will use **sceasy** for converting `SingleCellExperiment` to `Anndata`. sceasy is a package that helps easily convert different single-cell data formats to each other. Converting to AnnData creates a file that can be directly used in cellxgene which is an interactive explorer for single-cell transcriptomics datasets.
+
+```{r convert-anndata}
+
+convertFormat(pbmc_sce, from="sce", to="anndata",
+                       outFile='/Users/affaustino/Projects/UTILS/quarto_blog/data/pbmc.h5ad')
+
+```
+
