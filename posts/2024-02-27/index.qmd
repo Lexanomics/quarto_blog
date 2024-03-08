@@ -1,0 +1,24 @@
+---
+title: "Are you aware about RNA sequencing analysis?"
+author: "Iara Souza"
+date: "2024-02-27"
+categories: [bioinfo-trends, sequencing-technologies]
+---
+
+![Imagem de DC Studio no [Freepik](https://br.freepik.com/fotos-gratis/close-de-um-cientista-analisando-o-vacutainer-de-laboratorio-com-fluido_16790889.htm#fromView=search&page=1&position=40&uuid=9dc2630b-8eb8-49b3-99bc-2ff7c1ffabec)](fig1.jpg)
+
+Sequencing technologies have revolutionized our understanding of human and other organisms’ biology. By having access to the transcriptome, one can have insights about the cellular functional alterations in different metabolic scenarios. From gene expression data, various analyses can be conducted, including:
+
+🧬 **Differential expression analysis**, to compare the expression levels of genes in case-control scenarios, making possible the identification of biomarkers and gene signatures;
+
+🔍 **Functional enrichment analysis** and **gene set enrichment analysis (GSEA)**, to understand the impact of transcriptional alterations in cellular pathways and metabolic context;
+
+🤝 **Co-expression analysis**, to gather gene modules collectively expressed in a given condition;
+
+🔄 **Protein-protein interaction networks**, to understand how gene targets interact with each other in a functional and/or physical way;
+
+📊 **Expression deconvolution**, to infer cell type proportions from curated reference panels;
+
+🔗 **Construction of regulatory networks**, to understand how regulatory elements, such as transcription factors and non-coding RNAs, impact the transcriptional profile of a given condition.
+
+Here in Lexanomics, we have extensive experience in preprocessing RNA-Seq data by using gold-standard bioinformatics tools and protocols, which can help you to increase the impact of your research. Let's advance together! 🚀 #Lexanomics #RNAseq #Bioinformatics #Research
