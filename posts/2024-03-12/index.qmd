@@ -14,10 +14,10 @@ text-align: justify}
 
 The year 2020 will forever be remembered as the starting point of the COVID-19 pandemic, declared by the World Health Organization. A revolution in the speed of information generation marked this period, especially concerning the characterization of SARS-CoV-2 and the understanding of COVID-19.
 
-![Designed by [Freepik](http://www.freepik.com/)](fig1.jpg){fig-}
+![Designed by [Freepik](http://www.freepik.com/)](fig1.jpg)
 
 
-In just 12 days, from the hospital admission of a patient with characteristic COVID-19 symptoms to the publication in the prestigious journal Nature, the process of characterizing SARS-CoV-2 was remarkably efficient. In the study titled A New Coronavirus Associated with Human Respiratory Disease in China by Wu and collaborators, an advanced analytical method took center stage: meta-transcriptomics.
+In just 12 days, from the hospital admission of a patient with characteristic COVID-19 symptoms to the publication in the prestigious journal Nature, the process of characterizing SARS-CoV-2 was remarkably efficient. In the study titled A New Coronavirus Associated with Human Respiratory Disease in China by Wu and collaborators [@wu2020new], an advanced analytical method took center stage: meta-transcriptomics.
 
 To better comprehend the pathogen infecting the patient, researchers employed high-coverage meta-transcriptomic sequencing through the Illumina MiniSeq platform. The biological sample from bronchoalveolar lavage fluid underwent de novo contig assembly, revealing a 30,474-nucleotide sequence closely related to the SARS-like coronavirus genome found in bats (CoV) and recorded in the GenBank.
 
