@@ -1,7 +1,7 @@
 ---
 title: "A new look into microorganisms by the lens of metagenomics"
 author: "Iara Souza"
-date: "2024-03-08"
+date: "2024-02-28"
 bibliography: ref.bib
 categories: [bioinfo-trends, sequencing-technologies]
 ---
