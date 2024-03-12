@@ -5,13 +5,15 @@ date: "2024-03-14"
 execute:
     warning: false
     freeze: auto
-categories: [debbuging new]
+categories: [debbuging new, code]
 ---
 
 # Interoperability on Seurat V5
 
 Seurat is undoubtedly the most used package for single-cell analysis.  However, the single-cell field has changed towards new programming languages and packages (e.g., Scanpy), which leads to an issue regarding **interoperability
 **, i.e., the ability of software to exchange and make use of information. Here, we show how to quickly convert Seurat objects from ongoing projects to AnnData (Scanpy data object).
+
+![](post.png){width=300, heigh=300, fig-align="center"}
 
 ## 1. Loading requirements
 
@@ -88,3 +90,6 @@ convertFormat(pbmc_sce, from="sce", to="anndata",
 
 ```
 
+---
+
+* The figures are derived from [1](https://en.wikipedia.org/wiki/Python_(programming_language)), and [2](https://commons.wikimedia.org/wiki/File:Eo_circle_blue_letter-r.svg)
