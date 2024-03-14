@@ -5,7 +5,7 @@ date: "2024-03-14"
 execute:
     warning: false
     freeze: auto
-categories: [debbuging new, code]
+categories: [debbuging new]
 ---
 
 # Interoperability on Seurat V5
