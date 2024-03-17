@@ -1,0 +1,23 @@
+---
+title: "The butterfly effect: lncRNAs in the evolutionists’ sights"
+author: "Iara Souza"
+date: "2024-03-19"
+bibliography: ref.bib
+categories: [awesome science, evolution, lncRNA]
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+Flying insects have been starring the study of evolution. The story of how moths with darker color increased frequency in contrast to light color moths in the highly polluted 1900’s Manchester is a well-known example of the relationship of natural selection and evolution. 
+
+Protein coding genes are the main subjects of evolutionary studies, since they are directly implicated into protein production. However, another class of genes might need more attention. This time, a mutant butterfly caught the researchers attention.
+
+![*Heliconius melpomene*, a butterfly which was the subject of the studies. Image by wirestock on [Freepik](https://www.freepik.com/free-photo/vertical-closeup-shot-red-butterfly-sitting-flowe_14110155.htm#fromView=search&page=1&position=11&uuid=ee6c69d8-3dd9-4288-9ef7-bb0c948d4de3)](fig1.jpg)
+
+
+The discovery of a mutant butterfly on eBay has led to a breakthrough in understanding how butterfly wings develop their diverse patterns of colors. Previously, a protein-encoding gene called *cortex* was thought to be responsible, but new research has revealed that a different gene, which produces an lncRNA, is the key regulator. Evolutionary biologists discovered that a long noncoding RNA (lncRNA) controls the color patterns in butterfly wings. They found this by studying white-winged Heliconius butterflies and disabling the lncRNA gene in painted lady butterflies, which resulted in white-winged offspring. This lncRNA also controls pigmentation in other butterfly species. Another team found similar results in buckeye butterflies, where CRISPR editing of the lncRNA affected wing color and seasonal changes in color. Additionally, researchers in Singapore found that a microRNA regulates black wing patterns in squinting bush brown butterflies [@scienceref;@Fandino2024]. 
+
+These findings highlight the role of RNA, rather than proteins, in controlling visible traits in butterflies. This is the first time that long noncoding RNA (lncRNA) has been linked to the evolution of a visible trait in animals, suggesting that noncoding RNA plays a crucial role in genetic regulation.
