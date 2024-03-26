@@ -1,0 +1,24 @@
+---
+title: "Cholesin: a new hormone discovered for controlling cholesterol levels in humans"
+author: "Iara Souza"
+date: "2024-04-02"
+bibliography: ref.bib
+categories: [awesome science]
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+Energy metabolism is one of the most fascinating and complex subjects in human metabolism. For example, cholesterol metabolism involves many different hormones and has a major impact on many diseases, especially cardiovascular diseases. However, apart from being widely studied, pathways involving cholesterol and their effects on human tissues are not completely understood. Recently, a paper published by Hu and collaborators made a major breakthrough in the understanding of the regulation of cholesterol levels [@HU2024]. 
+
+It is known that cholesterol regulates - and it is regulated by - many genes. The HGM-CoA reductase, the enzyme involved in the first step of the cholesterol synthesis pathway, is downregulated when blood cholesterol levels are high, in a negative feedback mechanism. However, Hu and collaborators observed that the decrease of both RNA and protein levels of HGM-CoA reductase in this scenario is rapidly followed by a recovery of the HGM-CoA reductase, indicating that a new factor can influence the cholesterol synthesis after the cholesterol absorption. 
+
+Researchers were able to isolate a small plasma protein in mice fed with high levels of cholesterol. This protein was related to the human homolog gene *C7orf50*, which previously had no function associated with it but it is highly conserved between species. They decided to call this protein a new name: **cholesin**. 
+
+Through many experiments, researchers showed that cholesin is secreted by enterocytes through a mechanism mediated by NPC1L1 protein, a surface protein in enterocytes involved with cholesterol absorption. Also, they found two specific genetic variations near the end of the cholesin gene that are significantly associated with cholesterol levels in the blood. They studied 600 people and found that higher cholesin levels were linked to lower total and LDL cholesterol levels, but not to HDL cholesterol. Cholesin levels were also negatively associated with triglyceride levels and showed a strong relationship with APOB, a protein associated with cholesterol transport.
+
+![Graphical abstract summarising the main findings from Hu et al, 2024 paper.](fig1.jpg)
+
+These findings suggest that cholesin may play a role in regulating cholesterol levels in the body. This raises new possibilities for the development of  new treatments for conditions such as hypercholesterolemia and cardiovascular diseases. 
