@@ -1,0 +1,26 @@
+---
+title: "Why to sequence the DNA?"
+author: "Iara Souza"
+date: "2024-03-08"
+categories: [bioinfo-trends, sequencing-technologies]
+---
+
+There are many different DNA sequencing technologies, all of them with their potentialities. However, do you know some of the main use cases for DNA sequencing?
+
+![Designed by [Freepik](https://www.freepik.com/)](fig1.jpg)
+
+🧬 **Genomic research:** By sequencing the whole genome (WGS) or the exome (WES), one can understand the organism's genetic architecture;
+
+💉 **Medical diagnostics:** DNA sequencing can identify mutations and variations associated with genetic disorders, allowing for early diagnosis and personalized treatment plans; 
+
+💊 **Pharmacogenomics:** Understanding how an individual's genetic makeup influences their response to drugs helps tailor medication plans for maximum efficacy and minimal side effects; 
+
+🕵️‍♂️ **Forensic analysis:** DNA sequencing is used in forensic investigations to identify individuals, establish paternity, and solve criminal cases by analyzing biological evidence such as hair, blood, or saliva. 
+
+👪 **Ancestry and Genealogy:** DNA sequencing, particularly in the form of consumer genetic testing, is used to trace familial and ancestral relationships, providing insights into personal heritage and ancestry; 
+
+🦠 **Microbial and environmental analysis:** Sequencing the genomes of bacteria, viruses, and other microorganisms helps understand their biology and develop targeted treatments. Also, with DNA sequencing, it is possible to identify microorganisms in environmental samples, such as soil or water, helps monitor biodiversity, identify species presence, and assess ecosystem health; 
+
+🦴 **Evolutionary Biology:** Sequencing the genome of viruses and bacteria allows us to develop more precise hypotheses regarding the spread of pathogens responsible for the development of infectious diseases. Also sequencing ancient DNA from fossils and archaeological remains contributes to our understanding of evolutionary processes and the history of life on Earth.
+
+The Lexanomics team is experienced in all DNA sequencing analyses. If you want to know more about them, contact us! #DNAsequencing #Bioinformatics #Lexanomics 🧬🔬📊

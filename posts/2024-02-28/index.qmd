@@ -1,0 +1,31 @@
+---
+title: "A new look into microorganisms by the lens of metagenomics"
+author: "Iara Souza"
+date: "2024-02-28"
+bibliography: ref.bib
+categories: [bioinfo-trends, sequencing-technologies]
+---
+
+Have you ever heard that a great percentage of our body composition comes from the microorganisms living with us? Recent research suggests a 1:1 ratio for the number of microorganisms and human cells in the body [@SENDER2016337]. We coexist with several species of microorganisms and, therefore, our physiology is greatly influenced by these tiny beings. But can we study them all at once?
+
+![Designed by [Freepik](https://www.freepik.com/)](fig1.jpg)
+
+Yes! That’s when metagenomics comes to the rescue! Metagenomics is a relatively recent field of study within genetics and microbiology that involves the analysis of genetic material collected directly from human or environmental samples. The key principle behind metagenomics is the sequencing and analysis of DNA or RNA from an entire microbial community, without the need for isolating and culturing individual organisms. Here’s some applications for metagenomics:
+
+**Human Microbiome Research**: 👩‍🔬 Metagenomics sheds light on the diverse microbial communities residing within us, influencing health, disease, and personalized medicine;
+
+**Clinical Diagnostics**: 🏥 Rapid identification of pathogens in clinical samples aids in disease diagnosis, treatment, and surveillance, bolstering public health efforts;
+
+**Biodiversity Conservation**: 🦠Assess microbial diversity in threatened habitats, aiding in conservation planning and restoration efforts;
+
+**Ensuring Food Safety**: 🍽️ Detect foodborne pathogens, spoilage organisms, and authenticate food products, ensuring safety and quality;
+
+**Forensic Analysis**: 🕵️‍♂️ Analyze microbial signatures associated with crime scenes, human remains, and environmental samples, enhancing forensic science capabilities;
+
+**Environmental Microbiology**: 🌍 Metagenomics unveils insights into ecosystems, aiding conservation efforts and sustainable resource management;
+
+**Bioremediation Solutions**: 🛠️ Metagenomics identifies microbial candidates capable of degrading pollutants, paving the way for effective bioremediation strategies;
+
+**Advancing Agriculture**: 🌾 Metagenomics guides precision farming practices, enhancing crop productivity, and fostering sustainable agriculture…
+
+… and many more! Really, the sky's the limit for metagenomics applications. Do want help with metagenomics analyses? The Lexanomics team is here to help you! #Bioinformatics #Metagenomics #Lexanomics

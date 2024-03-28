@@ -3,7 +3,7 @@ title: "Analysing the cell transcriptional profile at the single-cell resolution
 author: "Iara Souza"
 bibliography: ref.bib
 date: "2024-02-29"
-categories: [scRNA-seq]
+categories: [bioinfo-trends, sequencing-technologies]
 ---
 
 <style>
