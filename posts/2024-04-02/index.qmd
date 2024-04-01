@@ -1,0 +1,25 @@
+---
+title: "Redefining the treponemal history through pre-Columbian genomes from Brazil"
+author: "Diego Gomes"
+date: "2024-04-02"
+bibliography: ref.bib
+categories: [awesome science]
+---
+
+```{=html}
+<style>
+body {
+text-align: justify}
+</style>
+```
+It's no secret that human migration dynamics are one of the primary factors responsible for the introduction of infectious agents to different parts of the planet. Historically, venereal syphilis is known to have caused a devastating outbreak in Europe in the late 15th century, leading to the widely accepted hypothesis that *Treponema pallidum* subsp. *pallidum* was introduced to the Americas during the colonization events led by Christopher Columbus.
+
+Contradictorily, based on fossil findings, paleontologists have been proposing the hypothesis that treponemal infections occurred in the Americas since pre-Columbian times. However, as these are only fossil findings, paleopathological evidence is often considered contradictory and unreliable.
+
+To finally clarify this topic, a group of researchers with expertise in Paleontology, Molecular Biology, and Bioinformatics conducted a study recently published in Nature, titled "Redefining the treponemal history through pre-Columbian genomes from Brazil."[@majander_redefining_2024] In this study, 99 fossil specimens from an archaeological site called Jabuticabeira II, located in the Laguna region of Santa Catarina on the Brazilian coast, were examined. These fossils were searched for signs of periostitis, bone remodeling, and "moth-eaten" marks, which are classic indicators of treponemal infections. At the end of the screening, 12 specimens were from individuals with these pathologies; however, only 4, from different individuals, provided sufficient genomic data for subsequent analysis.
+
+Shotgun genomic data were filtered using the Kraken tool, with its respective default database, revealing that among the sequenced material, there were reads belonging to the *Treponema* family. After several stages of genomic material enrichment for *T. pallidum*, it was possible to fully reconstruct the genome of three subspecies. The genomes were aligned with others available in public databases and subjected to molecular clock dating techniques, revealing that one of the sublineage genomes dated back to between 780 BC and 449 AD.
+
+![Compiled results from Majander et al. 2024](Fig.png)
+
+The findings also identified numerous recombination events among *Treponema* subspecies, which are classically known as a key mechanism in bacterial evolution. Thus, the groundbreaking discovery of a pre-Columbian treponematosis, stemming from a combination of ancient pathogen genomics and the careful selection of archaeological samples, sheds light on the events leading to the emergence and spread of venereal syphilis and helps resolve the evolutionary factors responsible for the global success of the *Treponema* family.
