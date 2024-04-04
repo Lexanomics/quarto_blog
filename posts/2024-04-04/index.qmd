@@ -25,7 +25,7 @@ To assist those who are new to taxonomic classification activities and even meta
 
 **Option 1**: Clone from github repository
 
-```{bash}
+```{r}
 git clone https://github.com/DerrickWood/kraken2.git
 
 cd kraken2
@@ -35,7 +35,7 @@ cd kraken2
 
 **Option 2**: Conda installation
 
-```{bash}
+```{r}
 conda create -n kraken2_env
 
 conda activate kraken2_env
@@ -45,7 +45,7 @@ conda install kraken2:2.1.2
 
 **Option 3** *(Only for Ubuntu based distros)*: Ubuntu repository installation
 
-```{bash}
+```{r}
 Sudo apt install kraken2
 ```
 
@@ -59,13 +59,13 @@ An analysis with Kraken2 occurs in two steps:
 
 The default Kraken2 database can be easily constructed by executing the following command:
 
-```{bash}
+```{r}
 kraken2-build --standard --db kraken_standard
 ```
 
 You can speed up some steps by setting the number of threads to use:
 
-```{bash}
+```{r}
 # using 30 threads
 kraken2-build --standard --threads 30 --db kraken_standard
 ```
@@ -82,7 +82,7 @@ The Kraken2 standard database is composed by archaea, bacteria, plasmid, viral, 
 
 After an extensive database-building job, the time to classify your reads has come. Here I will use the "kraken_standard" created in the last command. You shall change this parameter to the given database that you might be creating.
 
-```{bash}         
+```{r}         
 kraken2 \
   --db kraken_standard \
   --output kraken_out.txt \
