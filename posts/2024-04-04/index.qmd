@@ -4,6 +4,8 @@ author: "Diego Gomes"
 date: "2024-04-04"
 bibliography: ref.bib
 freeze: auto
+execute:
+  eval: false
 categories: [debbuging new]
 ---
 
