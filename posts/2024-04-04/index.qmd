@@ -46,7 +46,7 @@ conda install kraken2:2.1.2
 **Option 3** *(Only for Ubuntu based distros)*: Ubuntu repository installation
 
 ```{r}
-Sudo apt install kraken2
+sudo apt install kraken2
 ```
 
 An analysis with Kraken2 occurs in two steps:
