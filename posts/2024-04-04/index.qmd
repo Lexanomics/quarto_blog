@@ -1,0 +1,98 @@
+---
+title: "Basic taxonomic classification of long and short reads with Kraken2"
+author: "Diego Gomes"
+date: "2024-04-04"
+bibliography: ref.bib
+freeze: auto
+execute:
+  eval: false
+categories: [debbuging new]
+---
+
+```{=html}
+<style>
+body {
+text-align: justify}
+</style>
+```
+![Basic taxonomic classification of long and short reads with Kraken2](Fig.png)
+
+The taxonomic classification of reads from sequencing experiments has become a common task for most computational biology and bioinformatics projects. To facilitate this process, Kraken2 was developed to make it faster and computationally less costly [@wood_improved_2019].
+
+To assist those who are new to taxonomic classification activities and even metagenomics, we will describe a brief tutorial here for performing an analysis with Kraken2. It's worth noting that all commands shown here are extensively described in the [software's manual](https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown).
+
+### Kraken2 installation
+
+**Option 1**: Clone from github repository
+
+```{r}
+git clone https://github.com/DerrickWood/kraken2.git
+
+cd kraken2
+
+./install_kraken2.sh ./
+```
+
+**Option 2**: Conda installation
+
+```{r}
+conda create -n kraken2_env
+
+conda activate kraken2_env
+
+conda install kraken2:2.1.2
+```
+
+**Option 3** *(Only for Ubuntu based distros)*: Ubuntu repository installation
+
+```{r}
+sudo apt install kraken2
+```
+
+An analysis with Kraken2 occurs in two steps:
+
+1.  Building the database
+
+2.  Classification
+
+## 1. Building the Kraken2 database
+
+The default Kraken2 database can be easily constructed by executing the following command:
+
+```{r}
+kraken2-build --standard --db kraken_standard
+```
+
+You can speed up some steps by setting the number of threads to use:
+
+```{r}
+# using 30 threads
+kraken2-build --standard --threads 30 --db kraken_standard
+```
+
+This process will create a directory named "kraken_standard" containing three files: hash.k2d; opts.k2d and taxo.k2d.
+
+The Kraken2 standard database is composed by archaea, bacteria, plasmid, viral, UniVec_Core and human databases from GenBank, and should me enough to a basic metagenomics analysis.
+
+> **Note**: Building the standard database will require approximately 500 GB of free space on the hard drive (due to intermediate files) and 80 GB RAM, based on the data downloaded at the time of this publication.
+
+> **Tip**: rsync connection may crash sometimes. In this case, just run the command again, and Kraken2 will return to the point where the last complete library left off.
+
+## 2. Classification
+
+After an extensive database-building job, the time to classify your reads has come. Here I will use the "kraken_standard" created in the last command. You shall change this parameter to the given database that you might be creating.
+
+```{r}         
+kraken2 \
+  --db kraken_standard \
+  --output kraken_out.txt \
+  --report kraken_report.txt \
+  --threads 10 \
+  gut_unmapped.fastq.gz
+```
+
+`--output`: Will write the taxonomic classification of each read into the *kraken_out.txt* file
+
+`--report`: Will write the the number of minimizers in the database that are mapped to the various taxa/clades into the *kraken_report.txt* file. Write this file will be useful for further analysis with Braken, Taxpasta and Krona.
+
+`gut_unmapped.fastq.gz`: Are my reads dataset that I want to classify. You may change this parameter to the path and name of the file that you are going to classify.
