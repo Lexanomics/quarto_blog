@@ -80,7 +80,7 @@ The Kraken2 standard database is composed by archaea, bacteria, plasmid, viral, 
 
 After an extensive database-building job, the time to classify your reads has come. Here I will use the "kraken_standard" created in the last command. You shall change this parameter to the given database that you might be creating.
 
-```         
+```{bash}         
 kraken2 \
   --db kraken_standard \
   --output kraken_out.txt \
