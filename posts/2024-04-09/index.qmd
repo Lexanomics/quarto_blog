@@ -13,7 +13,7 @@ categories: [debbuging new]
 knitr::opts_knit$set(root.dir = "~/Área de Trabalho/")
 ```
 
-Suppose that we have a set of differentially expressed genes (DEG) from RNA-Seq data and their corresponding log2FoldChanges. Let's create a protein-protein interaction (PPI) network with StringDB. By combining PPI information and gene expression, we can have insights about how the DEGs can impact (or be impacted by) other genes. 
+Suppose that we have a set of differentially expressed genes (DEG) from RNA-Seq data and their corresponding log2FoldChanges. Let's create a protein-protein interaction (PPI) network with StringDB using some R packages. By combining PPI information and gene expression, we can have insights about how the DEGs can impact (or be impacted by) other genes. 
 
 You can download the data from this tutorial [here](https://drive.google.com/file/d/1J9Qe7noH_kK6NDOrv7v2c5bjAQKfmPv5/view?usp=sharing).
 
@@ -75,7 +75,7 @@ ppi <- read.table(text = req, sep = "\t", header = T)
 head(ppi[,1:2])
 ```
 
-The dataframe represents a network format called **edge list**. It represents the interaction between the proteins on the `stringId_A` column and the proteins on the `stringId_B` columns. For example, the protein 9606.ENSP00000216254 interacts with the protein 9606.ENSP00000258886. The interaction information of a given protein A and a protein B comes from different sources (also called channels). StringDB returns the following channels:
+The dataframe represents a network format called **edge list**. It represents the interaction between the proteins on the `stringId_A` column and the proteins on the `stringId_B` column. For example, the protein 9606.ENSP00000216254 interacts with the protein 9606.ENSP00000258886. The interaction information of a given protein A and a protein B comes from different sources or channels. StringDB returns the following channels:
 
 `score`: combined score  
 `nscore`: gene neighborhood score  
@@ -99,7 +99,7 @@ This leaves us with 375 interactions reported for the proteins retrieved from ou
 
 `RedeR` is an R/Bioconductor package suitable to plot and manipulate networks. It presents a friendly interface to facilitate network customization (See the [vignette](https://bioconductor.org/packages/release/bioc/vignettes/RedeR/inst/doc/RedeR.html) for the complete guideline).
 
-First, let's create a dataframe holding the information regarding each gene, their associated protein and the log2FC:
+First, let's create a dataframe holding the information regarding each gene, their associated protein, and the log2FC:
 
 ```{r}
 annotation <- merge(degs,
@@ -122,9 +122,9 @@ This is not great, the aesthetics can be improved. Now, let's associate the `ann
 graph <- RedeR::att.mapv(graph, dat = annotation, refcol = 3)
 ```
 
-The `refcol` argument specifies which column on my `annotation` dataframe corresponds to the node ID used to build the graph (in this case, we used the stringID, the third column on the `annotation` dataframe). This is the reference column that will be used to set other attributes to our network. 
+The `att.mapv` function associates node information from the `annotation` dataframe to the graph. The `refcol` argument specifies which column on the `annotation` dataframe corresponds to the node ID used to build the graph (in this case, we used the stringID, the third column on the `annotation` dataframe). This is the reference column that will be used to set other attributes to our network. 
 
-Usually, it is more informative to represent the nodes as gene names. Let's also color the nodes following the log2FC scale. To do that, let's set those attributes on the graph we created:
+Usually, it is more informative to represent the nodes as gene names. Let's also color the nodes following the log2FC scale. To do that, let's set those attributes on the graph we created with the `att.setv` function:
 
 ```{r}
 graph <- RedeR::att.setv(graph, from = "genes", to = "nodeAlias")
@@ -135,12 +135,15 @@ Now, we launch the `RedeR` interface and we add the network to it:
 
 ```{r}
 #| eval: false
+# Launch RedeR
 rdp <- RedPort()
 calld(rdp)
+
+# Add graph to RedeR interface
 addGraph(rdp, graph)
 ```
 
-From there, you can play around with your network and dispose the nodes as you wish. Or you can hit the "Start relax" button and the `RedeR` will look for an optimal layout for your network. This is specially useful for big networks. You can test different force parameters and see how it affects your network layout. 
+From there, you can play around with your network and display the nodes as you wish by clicking and dragging them. Or you can hit the "Start relax" button and the `RedeR` will look for an optimal layout for your network. This is specially useful for big networks. You can test different force parameters and see how it affects your network layout. 
 
 ![](fig1.png)
 
@@ -158,5 +161,5 @@ addLegend.color(rdp,
 
 ![](fig2.png)
 
-And voilà! You can save the network image by going in "File" > "Export" > "Image" and chosing the desired format. 
+And voilà! You can save the network image by clicking in "File" > "Export" > "Image" and chosing the desired format. 
 
