@@ -1,0 +1,315 @@
+---
+title: "An automatic and biological-driven approach for defining \"roots\" on Monocle3"
+author: "Lexanomics"
+date: "2024-04-18"
+execute:
+  warning: false
+freeze: auto
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [debbuging new]
+---
+
+# The rooting problem for pseudotime analysis
+
+::: columns
+::: {.column width="70%"}
+There are many reasons why a researcher wants to perform pseudotime analysis on single-cell datasets, including but not limited to cellular differentiation, developmental stages, and disease progression.
+
+Currently, we can leverage many packages for dealing with such analysis. We could roughly categorize them into approaches based on **user-defined roots** and **model-based roots**. Note that roots are the starting point of the pseudotime analysis, i.e., the algorithm will sort the cells and their transcriptional profiles based on that specific data point. Therefore, it is a VERY crucial step in pseudotime!
+
+On that note, Monocle3 is a well-known package for performing pseudotime analysis. It should be included in the "user-defined" category, i.e., it relies on a knowledge-driven selection. To aid bioinformaticians in root selection, we can leverage distinct models to give us hints. Today, we will talk about CytoTRACE, a package for measuring differentiation scores in single-cell datasets. CytoTRACE is based on the simple observation that transcriptional diversity—the number of genes expressed in a cell—decreases during differentiation. Thus, we can assume that cells predicted as less differentiated are the best candidates for pseudotime roots. **Check it out!**
+:::
+
+::: {.column width="30%"}
+![](post.png){width="300," heigh="300," fig-align="center"}
+:::
+:::
+
+## 1. Loading requirements
+
+```{r}
+#| output: false
+
+library(Seurat)
+library(SeuratWrappers)
+library(monocle3)
+library(UCell)
+library(dbscan)
+library(ggplot2)
+library(dplyr)
+
+# Loading the CytoTRACE code.
+source(here::here("./data/CytoTRACE.R"))
+source(here::here("./data/plotCytoTRACE.R"))
+
+```
+
+## 2. Loading pre-processed Seurat object
+
+Here, we will leverage data from [Vázquez-García](https://pubmed.ncbi.nlm.nih.gov/36517593/) et al (2022). This data was subset for only 20.000 cells, including malignant and TME cells. Particularly, this dataset was CD45+ and CD45− flow-sorted, i.e., we can easily distinguish between putative malignant, epithelial cells and TME-related cells.
+
+```{r}
+#| output: false
+
+seurat_object <- readRDS(file = here::here("./data/Ovarian_main_cluster_object.20k.RDS"))
+
+```
+
+```{r}
+
+DimPlot(
+  seurat_object,
+  group.by = "Sort"
+)
+
+```
+
+## 3. Performing basic cell-type annotation
+
+Next, we will subset NK cells based on lineage markers. It is fairly easy to do once we know which genes to look at. We will provide a small, but accurate list for major cell types.
+
+```{r}
+
+cell_lineage_markers <- list(
+  "T-Cells" = c("CD3D","CD3E","CD4","CD8A","CD8B"), 
+  "NK_cells" = c("NCAM1","KLRG1","FCGR3A","NKG7","GNLY","CD160"), 
+  "B/Plasma_cells" = c("CD19","MS4A1","CD79A","CD79B","SDC1","MZB1","XBP1","JCHAIN"), 
+  "Myeloid" = c("LYZ","S100A8","S100A9","CD68","CD14","C1QB","C1QC"), 
+  "Endothelial" = c("PECAM1","VWF","ENG","MCAM"), 
+  "Fibroblast" = c("FAP","PDPN","COL1A2","DCN","COL3A1","COL6A1"),
+  "Epithelial" = c("EPCAM","MUC1","ERBB2","KRT8","PGC","GKN2","SLC5A5","FABP1","KRT20")
+)
+
+```
+
+```{r}
+#| output: false
+
+seurat_object <- AddModuleScore_UCell(
+  seurat_object,
+  ncores = 8,
+  features = cell_lineage_markers) 
+
+```
+
+```{r}
+#| fig-height: 12
+#| fig-width: 8
+#| fig-align: "center"
+
+FeaturePlot(
+  seurat_object, 
+  reduction = "umap", 
+  label = TRUE,
+  ncol = 2,
+  features = paste0(
+    names(cell_lineage_markers), "_UCell")
+  )
+
+```
+
+## 4. Subsetting NK compartment for CytoTRACE analysis
+
+As expected the signature score derived from [UCell](https://bioconductor.org/packages/devel/bioc/vignettes/UCell/inst/doc/UCell_Seurat.html) can help us to annotate the distinct cell populations. The clusters #1, #7, and #15 are associated with NK and T-cells. This tutorial will consider that clusters #7 and #15 are populated by NK cells. **Note, that cluster #15 displays both T and NK signatures, a common feature associated with NK/T-cells. However, we will ignore it for today :)**
+
+```{r}
+
+nk_compartiment_object <- subset(
+  seurat_object, subset = seurat_clusters %in% c(7, 15))
+
+```
+
+```{r}
+
+nk_compartiment_counts <- LayerData(
+    object = nk_compartiment_object, layer = "counts")
+
+```
+
+```{r}
+#| output: false
+
+cyto_results <- CytoTRACE(nk_compartiment_counts)
+
+```
+
+```{r}
+
+plotCytoTRACE(cyto_results)
+
+```
+
+## 5. Extracting less differentiated NK cells
+
+CytoTRACE will rank the cell based on differentiation score, values ranging from 0 (more differentiated) to 1 (less differentiated).
+
+```{r}
+
+# Extracting UMAP coordinates
+nk_compartiment_embeddings <- Embeddings(
+  nk_compartiment_object[["umap"]]
+)
+
+# Adding UMAP and CytoTRACE score on metadata
+nk_compartiment_object <- AddMetaData(
+  nk_compartiment_object,
+  nk_compartiment_embeddings
+)
+
+nk_compartiment_object@meta.data[['CytoTRACE']] <- 
+  cyto_results$CytoTRACE
+
+```
+
+Next, we will leverage `dbscan` for selecting highly-dense clusters with CyTRACE scores higher or equal to 0.9.
+
+```{r}
+
+# Creating a data.frame with embeddings and CytoTrace score
+data <- nk_compartiment_object@meta.data[, c("umap_1", "umap_2", "CytoTRACE")]
+data <- data %>%
+  mutate(
+    filtered = ifelse(CytoTRACE >= 0.9, "Yes", "No") 
+  )
+
+```
+
+```{r}
+
+# Subsetting only CytoTRACE higher than 0.9 (less differentiated)
+filtered_data <- data %>%
+  filter(filtered == "Yes") %>%
+  select(umap_1, umap_2)
+
+# Choose eps and minPts based on your dataset characteristics
+clustering <- dbscan(filtered_data, eps = 0.5, minPts = 5)
+
+```
+
+```{r}
+
+# Calculate k-nearest neighbors distance as a proxy for density
+distances <- kNNdist(filtered_data, k = 5)  # You might want to adjust this based on the density you expect
+
+# Add distances to your data frame
+filtered_data$local_density = 1 / distances  # Inverse of distance to indicate density
+
+# Determine the candidate/representative for each cluster
+cluster_representatives <- data.frame()
+
+for (i in unique(clustering$cluster)) {
+  if (i > 0) {  
+    
+    # Only consider non-noise clusters
+    cluster_data <- filtered_data[clustering$cluster == i,]
+    
+    # Select the data point with the maximum local density
+    representative_index <- which.max(cluster_data$local_density)
+    cluster_representatives <- rbind(cluster_representatives, cluster_data[representative_index, ])
+  }
+}
+
+knitr::kable(cluster_representatives)
+
+```
+
+```{r}
+#| fig-height: 6
+#| fig-width: 7
+#| fig-align: "center"
+
+ggplot(data = data, aes(x = umap_1, y = umap_2)) +
+  geom_point(aes(color = filtered), alpha = 0.5) +
+  geom_point(data = cluster_representatives, color = "black", size = 5, shape = 17) +
+  scale_color_manual(values = c("grey", "blue", "black"), labels = c("No", "Yes", "Candidate")) +
+  labs(title = "UMAP Plot", x = "UMAP 1", y ="UMAP 2", color = "Has high CytoTRACE score?") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+```
+
+**Okey dokey!** Now we have a decent candidate (black triangle) to be used as a root! We can finally focus on *pseudotime* analysis with Monocle3.
+
+## 6. Preparing Monocle object
+
+```{r}
+#| output: false
+
+monocle_object <- as.cell_data_set(nk_compartiment_object)
+monocle_object <- cluster_cells(monocle_object)
+monocle_object <- learn_graph(monocle_object)
+
+```
+
+```{r}
+#| fig-height: 6
+#| fig-width: 5
+#| fig-align: "center"
+#| lightbox: true
+
+# This will print out an unrooted trajectory
+p0 <- plot_cells(
+  monocle_object,
+  cell_size = 2,
+  label_groups_by_cluster = FALSE, 
+  label_leaves = FALSE, 
+  label_branch_points = FALSE
+  )
+
+p0
+
+```
+
+## 7. Defining pseudotime root based on differentiation score
+
+```{r}
+
+monocle_object <- order_cells(
+  monocle_object, root_cells = row.names(cluster_representatives)) # Voilà. We can add the cell_id here.
+
+```
+
+```{r}
+#| fig-height: 6
+#| fig-width: 12
+#| fig-align: "center"
+
+p1 <- plot_cells(
+  monocle_object, 
+  color_cells_by = "pseudotime", 
+  cell_size = 2,
+  label_cell_groups = FALSE, 
+  label_leaves = FALSE, 
+  label_branch_points = FALSE
+  )
+
+p2 <- plot_cells(
+  monocle_object, 
+  color_cells_by = "CytoTRACE", 
+  cell_size = 2,
+  label_cell_groups = FALSE, 
+  label_leaves = FALSE, 
+  label_branch_points = FALSE
+  )
+
+p1 + p2
+
+```
+
+Done! We now have a basic workflow for defining pseudotime roots without manual intervention. The CytoTRACE + Monocle3 idea was originally published [here](https://www.nature.com/articles/s41586-024-07113-9).
+
+---
+
+```{r}
+#| echo: False
+
+sessionInfo()
+
+```
+
+---
+
+* The figures are derived from [1](https://en.wikipedia.org/wiki/Python_(programming_language)), and [2](https://commons.wikimedia.org/wiki/File:Eo_circle_blue_letter-r.svg)
