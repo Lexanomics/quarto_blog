@@ -1,0 +1,34 @@
+---
+title: "Population genetics meets immunotherapy"
+author: "Lexanomics"
+date: "2024-04-25"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+# Accounting for TCR diversity across human populations
+
+::: columns
+::: {.column width="70%"}
+
+Arguably, the immune system displays one of the highest complexities of any biological process in evolution. In humans, its ability to respond to pathogens spans multiple layers, such as adaptive and innate immunity, which are sometimes mediated by complex genetic arrangements, e.g., the T cell receptor (TCR) repertoire. TCRs are a fundamental component in adaptive immunity and have promising applications in immunotherapy. 
+
+However, the genetic determinates behind TCR diversity and its consequences for biomedical research remain insufficiently defined. In particular, Corcoran et al (2023) have highlighted TCR genetic variability across different human populations, including African, East Asian, South Asian, and European. 
+
+:::
+
+::: {.column width="30%"}
+![From [@Corcoran2023-ax]](abstract.jpeg){width="300," heigh="300," fig-align="center"}
+:::
+:::
+
+Based on the Corcoran study, genetic differences in the TCR genes can be found within every individual, other than identical twins, and every population. In total, the authors discovered 175 new gene variants, including three Neanderthal-derived introgressions. Particularly, Neanderthal-derived introgression seems to affect the interaction between specific TCR locus with butyrophilin-like molecule 3 (BTNL3) in modern Eurosian populations. BTNL3 modulates Vg4+ T cell activity in intestinal tissues and ultimately can lead to inflammation in Celiac disease, an autoimmune disorder. Alternatively, the authors showcase several variants that are associated with prognostic markers in multiple tumor types, including head and neck cancer. Finally, these findings provides insights into the mechanisms of immune regulation and potentially shows how to prioritize T-cell clonotypes immunotherapy applications, i.e., accounting for genetic background and treatment risk.
+
+**For those related to TCR research. Have you considered these aspects in your investigations?** These might be fundamental questions to pursue in admixture populations.
