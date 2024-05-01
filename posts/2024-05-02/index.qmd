@@ -1,0 +1,26 @@
+---
+title: "Gut microbiome composition: link between sports performance and protein absorption?"
+author: "Diego Teixeira"
+date: "2024-05-02"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+![From [@fritz_gut_2024]](abstract.png)
+
+Proteins are the building blocks of nutrition, indispensable for bone and muscle metabolism. Adequate intake not only maintains health but also bolsters sports performance. However, recent studies have shed light on the intricate relationship between high-dose protein intake and potential intestinal inflammation, such as inflammatory bowel disease. While most proteins are digested in the small intestine, about 10% remain undigested, undergoing further breakdown by gut bacteria in the large intestine. This process, known as proteolysis, produces byproducts like ammonia and biogenic amines, which may exacerbate intestinal irritations.
+
+Athletes, with their heightened physical demands, often require double the daily protein intake. Yet, crafting precise nutritional strategies becomes paramount, especially for those in endurance or strength training programs. Balancing protein consumption with other macronutrients becomes a nuanced dance, complicating the formulation of universal recommendations. Seeking to optimize protein intake quality among athletes, a recent study set out to evaluate the impact of protein supplementation with and without prebiotics and fermented herbal probiotics on the gut microbiome.
+
+Twenty elite male water polo players participated, divided into Control and Intervention groups. Both groups received a daily 250 ml dose of vegan protein shake over a 31-day period. However, the Intervention group received an additional supplement comprising prebiotics and a fermented probiotic herbal product for 30 days alongside the vegan protein. Stool samples were collected before and after the intervention, and the genetic material was sequenced using a NextSeq2000 platform to analyze the gut microbiome composition.
+
+Throughout the study, no significant differences in macronutrient intake were observed between the groups or over time. However, the Intervention group exhibited notable improvements in various metrics related to body composition, including fat-free mass, skeletal muscle mass, and arm circumference, alongside reductions in body fat metrics. These changes correlated with alterations in the gut microbiota, particularly an increase in Bacteroidetes and a decrease in Firmicutes. Notably, bacteria producing short-chain fatty acids (SCFAs) like butyrate underwent significant changes, potentially influencing muscle mass positively. SCFAs have been linked to improved metabolism and reduced inflammation, both crucial for sustaining muscle health during rigorous training.
+
+In conclusion, vegan protein supplementation, coupled with prebiotics and probiotics, proved beneficial for enhancing body composition among elite water polo players. The observed increase in skeletal muscle mass in the Intervention group suggests a synergistic relationship between protein supplementation and gut microbiota modulation. This is supported by the rise in SCFA-producing bacteria, hinting at improved muscle metabolism. Furthermore, elevated levels of mean corpuscular hemoglobin in the blood indicate enhanced metabolic activity within muscle cells, further bolstering the link between gut health and athletic performance.
