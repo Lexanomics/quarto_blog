@@ -1,0 +1,36 @@
+---
+title: "scGPT: A foundation model for single-cell genomics that got it! (The Right Stuff)."
+author: "Diego Coelho"
+date: "2024-05-07"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+![From [@Cui2024]](abstract.png)
+
+Generative pre-trained models are the new cool kid on the block [😎](https://www.youtube.com/watch?v=tbIEwIwYz-c) that no one can ignore anymore. Usage of this new approach have tremendous impact in a broad amount of areas. Biology is no exception, with complex molecular signatures, different cell types, states, and all kinds of different experiments to induce alteration in specific mechanisms make this a perfect storm to get more meaningful information from this source.
+
+In a single approach, scGPT has managed to get 6 different important aspects from scRNAseq:
+  1) Clustering;
+  2) Batch Correction;
+  3) Cell type annotation;
+  4) Gene network inference;
+  5) Multiomic integration; and
+  6) Perturbation prediction;
+
+For this first version of scGPT, it was used 33 million cells from [CELLxGENE collection](https://cellxgene.cziscience.com/) with 51 organs / tissues and 441 different studies, which represented a most of cellular differences across human body.
+  
+Authors have reported that their model without any fine-tuning can achieve impressive >80% precision while annotating non-rare cell types, and with some fine-tuning this precision can reach ~85%. Looking at perturbation, removal of 1 or 2 genes, in a cell model, fine-tuned scGPT was able to reach 60% of Pearson correlation, outcoming previous models by 5-20%. Integration of datasets also outperformed known techniques from scVI, Seurat and Harmony by 5-10%. GRN-inference was also tested finding not just known networks in curated datasets but also being able to predict interference in those networks.
+
+Although too good to be true, we definitely can´t take our eyes out from start using more and more this type of approach as Satija (Seurat main coordinator) have highlighted in his last [Single Cell Genomics Day](https://www.youtube.com/watch?v=eQ7wzmzWaEk&t=406s).
+
+Conclusion is that we are reaching a point that most of manual / semi-automated work running pipelines to describe cell types + extracting meaningful information scRNAseq would be mostly done by one of those generative models. In a near future, we might ask an LLM (as GPT4) with our fastqs which cell types and meaningful biological information can be found in our scRNAseq experiments.
+
+Authors were also very generous to provide lots of examples in jupyter notebooks in their github repo [scGPT](https://github.com/bowang-lab/scGPT). What you think about we explore this here in our blog for a next post? - Provide us some feedback in our [Linkedin](https://www.linkedin.com/company/96435480/admin/feed/posts/) post!
