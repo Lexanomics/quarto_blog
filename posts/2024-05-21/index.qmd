@@ -1,0 +1,24 @@
+---
+title: "gnomAD: 1,000,000 individuals variation reference"
+date: "2024-05-21"
+author: "Diego M. Coelho"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+From time to time, large consortiums release valuable datasets to the public. gnomAD is one such example. Following the release of gnomAD's exome and genome data, a new dataset comprising nearly one million patients [@Sun2024] is now available for analysis and research.
+
+![Operários (Workers) from brazilian painter, Tarsila do Amaral.](fig1.png)
+
+The article explores the genetic differences in over 980,000 people from various backgrounds, offering a valuable resource for understanding rare genetic variations. By studying the genetic data, researchers found millions of unique genetic changes, providing insights into how these variations are distributed among different populations. This extensive dataset, called the RGC Million Exome (RGCME), includes a diverse mix of participants and follows a standardized approach to data collection, making it easier for scientists to study gene functions, diseases, and genetic differences among populations.
+
+The study also identified genes that are crucial for normal cell function but may not be linked to known diseases because they are essential. By analyzing specific gene regions and protein domains intolerant to mutations, researchers gained a better understanding of how genetic changes can affect protein functions and potentially lead to diseases. This detailed analysis helps researchers prioritize genetic variants for further study and better interpret their impact on health and diseases.
+
+Furthermore, the research focused on identifying harmful genetic changes that can disrupt protein functions and lead to diseases. By using advanced computer tools to analyze the genetic data, researchers discovered hidden genetic changes that can affect how proteins work and contribute to diseases. These findings not only expand our knowledge of rare genetic variations but also support efforts in precision medicine by uncovering how genetic differences can influence health outcomes in diverse populations.
