@@ -1,0 +1,20 @@
+---
+title: "A link between the brain and the immune system"
+date: "2024-05-23"
+author: "Iara Souza"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+The brain and the immune system are intricately connected, with recent research uncovering many pathways through which they interact. For example, The blood-brain barrier (BBB) regulates immune cell entry, while microglia mediate neuroinflammation in response to injury or infection. Recent discoveries of brain lymphatic vessels highlight direct brain-immune communication. Cytokines from immune cells and neurotransmitters from the brain create a bidirectional communication loop. Dysregulation in this connection is linked to neurodegenerative diseases like Alzheimer's and multiple sclerosis, with chronic neuroinflammation playing a significant role.
+
+![Designed by [Freepik](http://www.freepik.com/).](fig1.jpg)
+
+By investigating how peripheral immune signals communicate with the brain via the vagal-nerve axis, researchers found a novel pathway through which the central nervous system modulate inflammatory processes. The accelerated publication authored by Li et al. [@jin2024bodybrain] uncovers a body-to-brain neural circuit that plays a crucial role in regulating immune responses. They identified vagal neurons that are tightly connected to to pro-inflammatory and anti-inflammatory signals, transmitting inflammatory information to neurons in the brainstem. They also showed that the body-to-brain neural circuit's has the ability to monitor and modulate the development of an inflammatory response, maintaining a balance between pro- and anti-inflammatory states. Additionally, the removal of this circuit during an innate immune challenge leads to unregulated and out-of-control inflammatory responses, while its activation can effectively reduce the pro-inflammatory state and promote anti-inflammatory responses. This circuit, particularly the  Nucleus of the Solitary Tract neurons, acts as a biological rheostat controlling the extent of peripheral inflammatory responses through positive and negative feedback modulation on immune cells. These are new and important findings that have direct potential therapeutic implications for immune disorders, including autoimmune diseases, cytokine storm, toxic shock, and hyperactive immune states, by pharmacologically targeting this circuit. Therefore, the brain's ability to transform the course of an immune response offers new possibilities for modulating a wide range of immune disorders, providing insights into combating dysregulated immune states and related diseases.
