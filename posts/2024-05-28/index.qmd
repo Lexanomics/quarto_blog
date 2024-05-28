@@ -1,0 +1,91 @@
+---
+title: "Yet another tip for speeding up DEG analysis on Seurat"
+author: "Lexanomics"
+date: "2024-05-28"
+bibliography: ref.bib
+execute:
+  warning: false
+freeze: auto
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [debbuging new]
+---
+
+![@Korsunsky653253](presto_speedup.png)
+
+Not long [ago](https://www.lexanomics.com/blog/posts/2024-03-28/), we discussed ways to speed up differential expression analysis in single-cell datasets.
+
+For that, I wrote a quick snippet using the **future** package for parallelizing. This is 100% cool. But, recently I found a more convenient way to do such a task. On this note, since an *old dog* can still learn new tricks, I would like to introduce: **presto**.
+
+Presto is a Wilcoxon rank sum test and auROC implementation that can run 1 million observations, 1K features, and 10 groups in 16 seconds (sparse input) and 85 seconds (dense input) [1](https://github.com/immunogenomics/presto). **Yes, sir, we are fast**.
+
+However, presto isn't a very new tool! It has been around for at least 5 years (based on GitHub development). Yet, it became much more convenient once it was integrated into the Seurat package (version 5.1.0) [2](https://satijalab.org/seurat/articles/announcements.html).
+
+Let's do a quick and dirty hands-on.
+
+First, we need to load the package and the data we will use for this example. I will use the same data that I used in this **debugging new** [post](https://www.lexanomics.com/blog/posts/2024-04-16/).
+
+## 1. Loading requirements
+
+```{r}
+#| warning: false
+
+library(Seurat)
+library(dplyr)
+library(presto) # Optional. It will be loaded behind the scenes.
+
+```
+
+## 2. Loading pre-processed Seurat object
+
+```{r}
+
+seurat_object <- readRDS(file = here::here("./data/Ovarian_main_cluster_object.20k.RDS"))
+
+```
+
+## 3. Running DEG analysis across clusters
+
+```{r}
+#| warning: false
+
+start_time <- Sys.time()
+
+# Find markers for every cluster compared to all remaining cells, report only the positive
+seurat_markers <- FindAllMarkers(seurat_object, only.pos = TRUE)
+
+end_time <- Sys.time()
+
+```
+
+**What?! How is that? I haven't change my code at all.**
+
+Yes, young bioinformatician. I said it was convenient everything you need for running it is already in place in Seurat version 5.1.0. For those not using this versions, you can also rely on **SeuratWrappers**. This package has a function called `RunPrestoAll`.
+
+## 4. Inspecting DEG table
+
+```{r}
+#| warning: false
+
+seurat_markers %>%
+  group_by(cluster) %>%
+  select(cluster, gene, pct.1, pct.2, avg_log2FC, p_val) %>%
+  top_n(5)
+
+```
+
+Pretty cool, right? Identical results, but much faster.
+
+## 5. Measuring computational time
+
+```{r}
+
+computational_time <- round(end_time - start_time, 2)
+
+```
+
+::: callout-tip
+Yeah, we ran the **FindAllMarkers** function into **`r sub(".* of ([0-9.]+) secs", "\\1", computational_time)`** seconds. The authors claimed that it could be 295 times faster than conventional implementations. Do not trust them? Feel free to run it. **Hint:** You might need to change your Seurat version. Also, you can use the toy dataset in this tutorial, it can be found [here](https://drive.google.com/file/d/1m77oiU-VCHnUTWGVKSc5Lk6sZho9eVU1/view?usp=sharing).
+:::
