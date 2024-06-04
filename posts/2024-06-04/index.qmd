@@ -1,5 +1,5 @@
 ---
-title: "Are good or a bad guy? Identifying malignant cells on "
+title: "Are good or a bad guy? Identifying malignant cells using Numbat"
 author: "Lexanomics"
 date: "2024-05-28"
 bibliography: ref.bib
