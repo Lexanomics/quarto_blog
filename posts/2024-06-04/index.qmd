@@ -1,5 +1,5 @@
 ---
-title: "Are good or a bad guy? Identifying malignant cells using Numbat"
+title: "Are a good or a bad guy? Identifying malignant cells using Numbat"
 author: "Lexanomics"
 date: "2024-05-28"
 bibliography: ref.bib
@@ -15,8 +15,7 @@ categories: [debbuging new]
 
 ![@Gao2024](numbat.png)
 
-Distinguishing malignant cells in a single-cell project can be a very time-consuming task. Particularly, malignant cells are heterogeneous and often display misleading expression signatures, which can be further obscure by tumor microenvironment or treatment features.
-In addition, some malignant cells are closely related to their normal counterparts (e.g., lymphoma). 
+Distinguishing malignant cells in a single-cell project can be a very time-consuming task. Particularly, malignant cells are heterogeneous and often display misleading expression signatures, which can be further obscure by tumor microenvironment or treatment features. In addition, some malignant cells are closely related to their normal counterparts (e.g., lymphoma). 
 
 How can we define malignant then? For this purpose, researchers have leveraged copy number variation (CNV) analysis, i.e., considering that only malignant cells should display these somatic events. A fair assumption.
 
