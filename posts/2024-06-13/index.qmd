@@ -1,0 +1,76 @@
+---
+title: "Convert database identifiers with `biomaRt` R package"
+author: "Lexanomics"
+date: "2024-06-13"
+execute:
+  warning: false
+freeze: auto
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [debbuging new]
+---
+
+BioMart is an integral part of the Ensembl project, and it was designed to facilitate the access and retrieval of biological data. With BioMart, users can easily extract information about genes, proteins, and other genomic features, linking this data across various biological datasets. Its flexibility and ease of use make it an invaluable tool for bioinformaticians and biologists aiming to integrate and analyze large-scale biological data efficiently. BioMart is available through its [web page](http://www.ensembl.org/info/data/biomart/index.html), however, there's the [`biomaRt`](https://bioconductor.org/packages/release/bioc/html/biomaRt.html) R/Bioconductor package that can be used to access data programatically.
+
+In this tutorial, we show how to make a simple query using the `biomaRt` R package.
+
+```{r}
+gene_list <- read.table("~/genes.txt", header = T, sep = "\t")
+```
+
+Suppose that we have a list of human peptides (Ensembl peptide IDs) and we want to retrieve their corresponding gene symbols.
+
+```{r}
+head(gene_list)
+```
+
+With biomaRt package, we can do that in 3 simple steps:
+
+```{r}
+library(biomaRt)
+```
+
+1. Set the ensembl channel: 
+
+```{r}
+ensembl <- useMart("ENSEMBL_MART_ENSEMBL")
+```
+
+Depending on the type of data you want to collect (e.g., variants), there are other channels available. To list all channels available, use the `listMarts()` function. 
+
+2. Choose a dataset (organism): 
+
+For human data, the dataset keyword is `hsapiens_gene_ensembl`. To access the keywords for other organisms, run the `listDatasets()` function. 
+
+```{r}
+ensembl <- useDataset(dataset = "hsapiens_gene_ensembl", mart = ensembl)
+```
+
+3. Make the query:
+
+Before making the query, we need to know which attribute keywords are available at BioMart database. We can list the attributes available with the `listAttributes()` function. We also need to obtain the filter keywords by using the `listFilters()` function. In summary, the attributes are the ID keywords you want to retrieve and the filters are the ID keywords you'll use to make the query. 
+
+With proper attributes and filters selected, you can pass them to the `attributes` and `filters` arguments from the `getBM()` function. If you have a specific list of identifiers to convert, like we do have from the `gene_list` dataframe, pass it to the `values` argument. If you do not provide anything to the `values` argument, the `getBM()` function will return all identifiers requested for the attributes provided on the chosen organism.  
+
+```{r}
+# Dataframe with attributes
+att <- listAttributes(ensembl)
+
+# Dataframe with filters
+filters <- listFilters(ensembl)
+
+# Make the query with getBM function
+ids <- getBM(attributes = c("hgnc_symbol", "ensembl_peptide_id"),
+             filters = "ensembl_peptide_id",
+             values = gene_list$ensembl_peptide_id,
+             mart = ensembl)
+
+head(ids)
+```
+
+And that's it! You can make many different queries on the database identifiers provided by BioMart.
+
+
+
