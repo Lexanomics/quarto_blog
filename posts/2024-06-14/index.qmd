@@ -1,0 +1,25 @@
+---
+title: "Phylogenomics and the rise of the angiosperms"
+author: "Diego Teixeira"
+date: "2024-06-13"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+Angiosperms, or flowering plants, represent one of the most diverse and ecologically dominant groups of plants on Earth. Check out what a high resolution phylogenetic tree is able to infer in this amazing work. 
+
+![From [@zuntini_phylogenomics_2024]](abstract.png)
+
+
+This study aims to enhance our understanding of their evolution by providing a comprehensive phylogenomic analysis using nuclear genes to reconstruct the angiosperm tree of life. By significantly increasing the sampling of angiosperm genera and genomes, this research addresses previous limitations and offers a robust framework for understanding the evolutionary history, diversification patterns, and relationships of angiosperms.
+
+Utilizing fossil calibrations, the phylogenetic tree is scaled to time, shedding light on the complex evolutionary trajectories of these plants. Key findings include a nuclear phylogenomic tree covering all 64 orders and 416 families of angiosperms, revealing new relationships and addressing unresolved issues in angiosperm phylogeny. The study also highlights the association between gene tree conflict and diversification patterns, noting elevated conflict during early diversification bursts and fluctuations in diversification rates, particularly during the Cenozoic Era due to global climatic cooling.
+
+Overall, this research underscores the importance of botanical collections in reconstructing the tree of life and emphasizes the need for continued exploration of angiosperm evolution, especially in recent evolutionary history. The insights gained contribute significantly to our understanding of the macroevolution and ecological success of angiosperms.
