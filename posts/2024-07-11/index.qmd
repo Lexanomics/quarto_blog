@@ -1,0 +1,27 @@
+---
+title: "Human microbiome alterations during spaceflight"
+date: "2024-07-11"
+author: "Lexanomics"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+Spaceflight missions have contributed to the advancement of a plentitude of areas, however, little is known about how the human body and their associated microbiome respond to the low gravity environment. A study performed with the crew from the SpaceX Inspiration4 mission (i4), launched in 2021, the first all-civilian commercial spaceflight. The mission involved a 3-day, high-elevation orbit at 590 km [@Tierney2024].
+
+![Experimental design for the study, from @Tierney2024.](fig1.png)
+
+The crew collected samples before, during, and after the spaceflight to analyze astronauts' microbiome and immune responses in this unique space environment. A total of 750 samples were collected from 10 body sites, including skin, oral, and nasal cavities. Additional samples were collected from multiple Dragon capsules at different locations.
+
+The researchers performed metagenomics and metatranscriptomic analyses of the samples collected to analyze the total microbial DNA and RNA. They utilized bioinformatics and statistical approaches to identify the microbiome content and their functional profile and to assess associations between the microbiome composition and the astronaut’s immune responses.  
+
+The alterations in the microbiome were both transient and long-term, with different patterns observed across body sites. The transient changes included increased viruses in skin sites during the flight, indicating an acute response to the space environment. Also, the short-term spaceflight conditions, such as microgravity, radiation, and altered dietary habits, influenced overall bacterial and viral community composition and expression across crews. Longer-term shifts were observed in the oral microbiome, with an increased abundance of plaque-associated bacteria, such as Fusobacteriota, which can be associated with dental decay and biofilm formation.  These long-term changes in the oral microbiome correlated with immune cell gene expression, suggesting a potential link between oral microbiome alterations and immune responses.
+
+These results help to unravel the way the space environment affects human-microbiome interaction. These results have implications for astronaut health, space mission planning, and the development of targeted health interventions for individuals in space environments.
+
