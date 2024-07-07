@@ -13,7 +13,7 @@ lightbox:
 categories: [awesome science]
 ---
 
-Spaceflight missions have contributed to the advancement of a plentitude of areas, however, little is known about how the human body and their associated microbiome respond to the low gravity environment. A study performed with the crew from the SpaceX Inspiration4 mission (i4), launched in 2021, the first all-civilian commercial spaceflight. The mission involved a 3-day, high-elevation orbit at 590 km [@Tierney2024].
+Spaceflight missions have contributed to the advancement of a plentitude of areas, however, little is known about how the human body and its associated microbiome respond to the low gravity environment. A study was performed with the crew from the SpaceX Inspiration4 mission (i4), launched in 2021, the first all-civilian commercial spaceflight. The mission involved a 3-day, high-elevation orbit at 590 km [@Tierney2024].
 
 ![Experimental design for the study, from @Tierney2024.](fig1.png)
 
