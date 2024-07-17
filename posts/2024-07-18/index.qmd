@@ -1,0 +1,36 @@
+---
+title: "Using 16S rDNA and metagenomic sequencing technology to analyze the fecal microbiome of children with avoidant/restrictive food intake disorder"
+author: "Diego Teixeira"
+date: "2024-07-18"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+
+
+::: columns
+::: {.column width="60%"}
+
+The gut microbiome, an essential component for maintaining overall health, is shaped by various factors including genetics, diet, and lifestyle. While substantial research has connected the gut microbiota to eating disorders such as anorexia nervosa, its role in avoidant/restrictive food intake disorder (ARFID) remains relatively unexplored. 
+:::
+::: {.column width="30%"}
+![](abstract.png){width="200," heigh="200," fig-align="center"}
+:::
+:::
+ARFID, marked by selective eating, presents a unique opportunity to understand how gut microbiota may influence this condition. This study delves into the potential differences in gut microbiota composition between children with ARFID and healthy controls, utilizing 16S rDNA sequencing and metagenomic analysis to identify specific microbial taxa associated with ARFID. In this work, the goal of @ye_using_2023 was to shed light on the disorder's pathogenesis and explore microbiome-targeted therapies to improve outcomes for affected children.
+
+
+
+
+The research revealed notable differences in gut microbiota composition and diversity between children with ARFID and healthy controls. At the genus level, there was a higher abundance of Bacteroides in the ARFID group, a finding particularly prominent in metagenomic sequencing. Although similarities were observed at the phylum level, species-level differences were significant. Children with ARFID had a higher presence of Escherichia coli and Streptococcus thermophilus, while healthy controls exhibited more Prevotella copri and Bifidobacterium pseudocatenulatum. Despite these observations, no statistically significant differences were found in the abundance of specific microbial taxa between the two groups, indicating subtle yet noteworthy variations in gut microbiota composition in children with ARFID.
+
+The study's implications on antibiotic resistance and the gut microbiome are profound. The findings suggest that children with ARFID show alterations in gut microbiota composition, which could potentially influence antibiotic resistance profiles. Variations in microbial diversity and abundance, particularly in species like Bacteroides, might impact the gut microbiome's resilience to antibiotics. Understanding these relationships is crucial, as disruptions in the gut microbiota due to ARFID may contribute to changes in antibiotic resistance patterns. This highlights the importance of considering both the microbiome and antibiotic resistance in the management and treatment of ARFID. Further research in this area is essential to fully comprehend these complex interactions and develop effective interventions.
+
+In conclusion, this study provides valuable insights into the gut microbiome's role in ARFID. By identifying specific microbial taxa associated with the disorder and exploring their potential impacts on antibiotic resistance, we can better understand the underlying mechanisms of ARFID and pave the way for microbiome-targeted therapies. Continued research is vital to unlock the full potential of these findings and improve the health and well-being of children affected by ARFID.
