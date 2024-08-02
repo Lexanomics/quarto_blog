@@ -1,0 +1,24 @@
+---
+title: "Using mitochondrial genetics to improve clonal tracing with single-cell mtDNA data"
+author: "Diego M. Coelho"
+date: "2024-08-01"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+Mitochondrial DNA (mtDNA) is highly useful for clonal tracing, which tracks the lineage and growth of cells within an organism. Due to its high mutation rate and unique inheritance patterns, mtDNA serves as an excellent natural barcode. With the advent of new single-cell sequencing technologies, scientists can capture mtDNA variations in individual cells, enabling them to map out how cell populations change and evolve in human tissues. This provides valuable insights into cell lineage, development, and disease progression.
+
+![New insights emergerging from single-cell mtDNA.](abstract.png)
+
+A significant application of mtDNA in clonal tracing is in studying blood cell formation, known as hematopoiesis. By analyzing mtDNA mutations, researchers can track the lineage and growth of hematopoietic stem cells (HSCs) and their offspring. This reveals how blood cell populations are structured and how they change with age or disease. For example, clonal hematopoiesis, where many blood cells originate from one dominant HSC clone, is linked to a higher risk of blood cancers and other diseases. Single-cell mtDNA sequencing helps identify these clones and understand their origin, growth, and impact on health.
+
+Beyond blood cells, mtDNA clonal tracing is also valuable in cancer research and immune cell studies. In cancer, mtDNA mutations can track how tumors evolve, showing how different subclones grow and respond to treatment. This helps understand tumor diversity, which is a major challenge in cancer therapy. Additionally, mtDNA variations assist in studying how immune cells, like T cells and natural killer (NK) cells, respond to infections or immunotherapies. By tracking these cells, researchers gain a better understanding of immune responses and the development of immune memory. The broad potential of mtDNA clonal tracing offers a powerful tool for uncovering basic biological processes and improving clinical treatments.
+
+For a comprehensive overview of these applications and more, the paper by @Nitsch2024 provides an excellent starting point. Explains the use of single-cell mtDNA sequencing for clonal tracing and other biological studies, highlighting recent advancements and future prospects in the field.
