@@ -1,0 +1,26 @@
+---
+title: "The gut microbiome influences microglial populations"
+author: "Lexanomics"
+date: "2024-08-08"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+The relationship between the gut microbiome and the neural function and behavior has been widely explored in the past years, specially after the development of metagenomics techniques. Here, we highlight the @huang2023gut et al. study, which explored the transcriptomic changes in microglia resulting from the absence of gut microbiota and the potential reversibility of these changes through microbial colonization.
+
+![Differences in distribution of microglial subpopulations in the prefrontal cortex (PFC) across different groups of mice: germ-free (GF), specific pathogen-free (SPF), and colonized-GF (CGF). From @huang2023gut](fig1.png)
+
+Microglia are immune cells in the central nervous system that maintain homeostasis, respond to injury, and modulate neuroinflammation. They are key in synaptic pruning, neuroprotection, and pathogen response. Recent studies show that the gut microbiome significantly impacts brain function, affecting microglial activity via the microbiota-gut-brain axis. Disruptions in gut microbiota are linked to neuropsychiatric disorders like Alzheimer's and major depressive disorder, characterized by altered microglial function and neuroinflammation.
+
+To explore how microglia can be affected by the microbiome, researchers used germ-free (GF), specific pathogen-free, and colonized-GF mice. They employed single nucleus sequencing to analyze cell type-specific transcriptomic changes in the prefrontal cortex and hippocampus of the animals. 
+
+In germ-free mice, the absence of gut microbiota caused significant transcriptomic changes in the prefrontal cortex and hippocampus, especially affecting microglia. The gut microbiome influenced the transformation of microglial subpopulations, linked to changes in inflammation-related signals. Microbial colonization reversed these transcriptional changes, highlighting the dynamic relationship between gut microbiota and microglial function. Cross-species analysis associated these transcriptomic changes with Alzheimer's and major depressive disorder, supported by behavioral tests in mice. Additionally, the absence of gut microbiota increased microglia-astrocyte communication, warranting further exploration in microbiota-gut-brain axis-related diseases.
+
+Overall, the findings provide new insights into how gut microbiota influence microglial biology and their potential implications for understanding the pathogenesis of neurodegenerative diseases.
