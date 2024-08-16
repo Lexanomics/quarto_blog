@@ -1,0 +1,24 @@
+---
+title: "Multikingdom and functional gut microbiota markers for autism spectrum disorder"
+author: "Diego G. Teixeira"
+date: "2024-08-15"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+The gut microbiome's role in health, especially in autism spectrum disorder (ASD), is gaining increasing attention. Research shows that children with ASD may have distinct gut microbiota compared to their neurotypical peers, which could influence the severity of ASD symptoms. This study takes a comprehensive look at these microbial differences by analyzing not just bacteria but also archaea, fungi, and viruses within the gut. By adopting this multikingdom approach, the research aims to deepen our understanding of the microbiome's role in ASD and contribute to the development of non-invasive diagnostic tools. The ultimate goal is to improve diagnostic accuracy and inform treatment strategies for children with ASD.
+
+
+![Multikingdom and functional gut microbiota markers for autism spectrum disorder. @su_multikingdom_2024](abstract.png)
+
+The study involved 709 children with ASD, aged 3 to 12 years. Diagnoses were made by child psychiatrists using the DSM-5 criteria, ensuring clinical accuracy. The study also looked at co-occurring conditions like ADHD, while excluding children with significant comorbidities such as mental retardation or major medical illnesses. Participants came from a mix of community and hospital settings, offering a diverse sample.
+
+Microbial DNA was extracted from fecal samples and analyzed using metagenomic sequencing on an Illumina NovaSeq system. Machine learning was then used to develop diagnostic models based on microbial markers, aiming to identify potential diagnostic indicators of ASD.
+
+The study found a significant decrease in the diversity of archaea, bacteria, and viruses, particularly among bacterial communities in children with ASD. Out of 90 identified microbial species, 80 were significantly decreased in the ASD group, including important species like *Streptococcus thermophilus* and short-chain fatty acid producers like *Bacteroides* sp., with only one bacterial species showing an increase. Additionally, the researchers created a diagnostic panel based on 31 microbial markers, which proved effective in distinguishing children with ASD from neurotypical children, demonstrating strong sensitivity and specificity in validation tests. These findings suggest that specific gut microbiota profiles could serve as valuable diagnostic markers for ASD.
