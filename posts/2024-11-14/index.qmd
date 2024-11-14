@@ -1,0 +1,24 @@
+---
+title: "Insulin molecule with an on and off button"
+author: "Lexanomics"
+date: "2024-11-14"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+Managing diabetes effectively requires precise control of blood glucose levels, typically achieved through insulin therapy. However, conventional insulin treatments can lead to hypoglycemia—a dangerous drop in blood sugar—if not carefully monitored. To address this challenge, researchers at Novo Nordisk have developed a glucose-sensitive insulin analogue named NNC2215, which modulates its activity in response to varying glucose concentrations, thereby reducing the risk of hypoglycemia [@Hoeg-Jensen2024].
+
+![Mechanism of action for the glucose--sensitive insulin molecule. Illustration from @Sacks2024](fig1.webp)
+
+NNC2215 is engineered by attaching a glucose-binding macrocycle and a glucoside to specific sites on the insulin molecule. At low glucose levels, the glucoside occupies the macrocycle, keeping NNC2215 in a closed, inactive conformation. When glucose levels rise, glucose binds to the macrocycle, displacing the glucoside and shifting NNC2215 into an open, active form that can effectively bind to insulin receptors. 
+
+In vitro studies demonstrated that NNC2215's binding affinity to insulin receptors increases significantly with higher glucose concentrations. In animal models, NNC2215 effectively lowered blood glucose levels during hyperglycemia and minimized the risk of hypoglycemia during periods of low blood sugar. 
+
+The development of NNC2215 represents a significant advancement in diabetes management, offering a potential therapy that adjusts its activity based on the body's glucose levels. This glucose-responsive mechanism could enhance blood sugar control and reduce the incidence of hypoglycemic events, improving the quality of life for individuals with diabetes. 
