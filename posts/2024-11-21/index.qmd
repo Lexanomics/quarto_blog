@@ -1,0 +1,26 @@
+---
+title: "The impact of coffee consumption in the human gut microbiome"
+author: "Diego Teixeira"
+date: "2024-11-21"
+execute:
+  warning: false
+freeze: auto
+bibliography: ref.bib
+lightbox:
+    match: auto
+    effect: zoom
+    loop: true
+categories: [awesome science]
+---
+
+Coffee, one of the world’s most consumed beverages, is not just a source of caffeine; it’s also linked to a range of health benefits, such as reducing mortality and lowering risks for type 2 diabetes, non-alcoholic fatty liver disease, and certain cancers. Rich in polyphenols like chlorogenic acid and trigonelline, coffee is an excellent model for exploring how diet influences the gut microbiome. Research shows that coffee can alter the diversity of gut bacteria, promoting the growth of genera like *Bacteroides*, *Prevotella*, *Faecalibacterium*, and *Alistipes*. One initial study even found coffee to have the strongest correlation with microbiome composition, underscoring its important role in shaping microbial communities.
+
+![Coffee consumption is associated with intestinal Lawsonibacter asaccharolyticus abundance and prevalence across multiple cohorts. Illustration from @manghi_coffee_2024](fig.png)
+
+Here, a total of 54,198 metagenomic samples from multiple sources were evaluated, including 35,214 samples from five ZOE PREDICT cohorts, the MBS, and the MLVS, as well as 18,984 samples from public databases, covering diverse groups such as healthy individuals, non-Westernized populations, newborns, ancient microbiomes, non-human primates, and individuals with various diseases. The samples were profiled using MetaPhlAn 4, with 23,115 of them linked to detailed food frequency questionnaires covering over 150 food items. Additionally, the study included 438 plasma metabolomes and 364 faecal metatranscriptomes from the MBS and MLVS cohorts.
+
+In addition to microbiome analysis, machine learning models demonstrated that microbiome data could predict coffee intake, with high accuracy in distinguishing coffee drinkers from non-drinkers. Experimental results further confirmed that coffee directly stimulates the growth of *L. asaccharolyticus*, even in the absence of caffeine.
+
+Metabolite analysis also provided more evidence, showing that coffee-related compounds like caffeine and quinic acid were linked to the presence of *L. asaccharolyticus*. This reinforces the idea that coffee consumption can induce specific changes in the microbiome.
+
+Up to 115 species-level genomes were found to be positively associated with coffee intake, highlighting coffee’s significant impact on the gut microbiome. Future studies should focus on further understanding the mechanisms behind the relationship between coffee and *L. asaccharolyticus*. As coffee continues to show potential health benefits, it’s crucial to investigate whether this bacterium could mediate some of the positive health effects attributed to coffee. These findings mark a significant step toward understanding how specific foods influence the gut microbiome, opening doors for future research on the microbiome-diet connection.
